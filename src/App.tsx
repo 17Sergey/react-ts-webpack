@@ -1,3 +1,16 @@
+import "./styles.css";
+import Car from "./car.jpg";
+import ReactIcon from "./react.svg";
+
 export const App = () => {
-  return <div>React TypeScript Webpack starter template</div>;
+  return (
+    <div>
+      <h1>React TypeScript Webpack starter template</h1>
+      <p>
+        JSX also works, let's insert current data: {new Date().toDateString()}
+      </p>
+      <img src={Car} alt="" width={800} height={500} />
+      <img src={ReactIcon} alt="" width={300} height={200} />
+    </div>
+  );
 };
