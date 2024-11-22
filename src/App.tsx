@@ -1,6 +1,7 @@
 import "./styles.css";
 import Car from "./car.jpg";
 import ReactIcon from "./react.svg";
+import { Counter } from "./Counter";
 
 export const App = () => {
   console.log(process.env.NODE_ENV);
@@ -14,6 +15,7 @@ export const App = () => {
       </p>
       <img src={Car} alt="" width={800} height={500} />
       <img src={ReactIcon} alt="" width={300} height={200} />
+      <Counter />
     </div>
   );
 };
