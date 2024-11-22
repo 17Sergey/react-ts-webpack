@@ -3,6 +3,9 @@ import Car from "./car.jpg";
 import ReactIcon from "./react.svg";
 
 export const App = () => {
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.custom);
+
   return (
     <div>
       <h1>React TypeScript Webpack starter template</h1>

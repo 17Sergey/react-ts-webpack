@@ -1,45 +1,13 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { merge } = require("webpack-merge");
+const commonConfig = require("./webpack.common.js");
 
-module.exports = {
-  entry: path.resolve(__dirname, "..", "./src/index.tsx"),
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource", // out of the box with webpack 5
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
-      },
-    ],
-  },
-  output: {
-    path: path.resolve(__dirname, "..", "./dist"),
-    filename: "bundle.js",
-  },
-  mode: "development",
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./src/index.html"),
-    }),
-  ],
-  stats: "errors-only",
+// TODO: what if code out of the module.exports?
+
+// When it's a function, we get access to the env variables of the package.json file
+module.exports = (envVars) => {
+  const { env } = envVars;
+  const envConfig = require(`./webpack.${env}.js`);
+  const config = merge(commonConfig, envConfig);
+
+  return config;
 };
