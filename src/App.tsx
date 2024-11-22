@@ -4,7 +4,7 @@ import ReactIcon from "./react.svg";
 
 export const App = () => {
   console.log(process.env.NODE_ENV);
-  console.log(process.env.custom);
+  console.log(process.env.CUSTOM);
 
   return (
     <div>
