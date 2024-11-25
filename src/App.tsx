@@ -11,7 +11,8 @@ export const App = () => {
     <div>
       <h1>React TypeScript Webpack starter template</h1>
       <p>
-        JSX also works, let's insert current data: {new Date().toDateString()}
+        JSX also works, let&apos;s insert current data:{" "}
+        {new Date().toDateString()}
       </p>
       <img src={Car} alt="" width={800} height={500} />
       <img src={ReactIcon} alt="" width={300} height={200} />
