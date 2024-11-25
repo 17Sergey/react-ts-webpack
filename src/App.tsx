@@ -1,6 +1,6 @@
 import "./styles.css";
 import Car from "./car.jpg";
-import ReactIcon from "./react.svg";
+import ReactIcon from "./assets/images/react.svg";
 import { Counter } from "./Counter";
 
 export const App = () => {
