@@ -4,19 +4,16 @@ import ReactIcon from "./react.svg";
 import { Counter } from "./Counter";
 
 export const App = () => {
-  console.log(process.env.NODE_ENV);
-  console.log(process.env.CUSTOM);
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.CUSTOM);
 
-  return (
-    <div>
-      <h1>React TypeScript Webpack starter template</h1>
-      <p>
-        JSX also works, let&apos;s insert current data:{" "}
-        {new Date().toDateString()}
-      </p>
-      <img src={Car} alt="" width={800} height={500} />
-      <img src={ReactIcon} alt="" width={300} height={200} />
-      <Counter />
-    </div>
-  );
+    return (
+        <div>
+            <h1>React TypeScript Webpack starter template</h1>
+            <p>JSX also works, let&apos;s insert current data: {new Date().toDateString()}</p>
+            <img src={Car} alt="" width={800} height={500} />
+            <img src={ReactIcon} alt="" width={300} height={200} />
+            <Counter />
+        </div>
+    );
 };
